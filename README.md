@@ -48,7 +48,9 @@ $ anvil
 ### Deploy
 
 ```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+$ forge script script/BasePassDeploy.s.sol:CounterScript --rpc-url $BASE_MAINNET_RPC --private-key $PRIVATE_KEY --etherscan-api-key $BASESCAN_API_KEY --verifier-url $BASE_MAINNET_VERIFIER_URL --broadcast --verify 
+
+forge script script/BasePassDeploy.s.sol:CounterScript --rpc-url $BASE_SEPOLIA_RPC --private-key $PRIVATE_KEY --etherscan-api-key $BASESCAN_API_KEY --verifier-url $BASE_SEPOLIA_VERIFIER_URL --broadcast --verify
 ```
 
 ### Cast
