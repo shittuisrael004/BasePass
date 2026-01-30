@@ -5,6 +5,7 @@ contract TreasuryVault {
     receive() external payable {}
 
     function withdraw(address payable to, uint256 amount) external {
-        to.transfer(amount);
+        (bool success, ) = to.call{value: amount}("");
+        require(success, "Call failed");
     }
 }
