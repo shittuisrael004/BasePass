@@ -4,6 +4,7 @@ pragma solidity ^0.8.13;
 import {Script} from "forge-std/Script.sol";
 import {BasePassERC721} from "../src/BasePassERC721.sol";
 import {BasePassFactory} from "../src/BasePassFactory.sol";
+import {TierManager} from "../src/TierManager.sol";
 
 contract BasePassERC721Script is Script {
     BasePassERC721 public basePassERC721;
@@ -29,6 +30,21 @@ contract BasePassFactoryScript is Script {
         vm.startBroadcast();
 
         basePassFactory = new BasePassFactory();
+
+        vm.stopBroadcast();
+    }
+}
+
+
+contract TierManagerScript is Script {
+    TierManager public tierManager;
+
+    function setUp() public {}
+
+    function run() public {
+        vm.startBroadcast();
+
+        tierManager = new TierManager();
 
         vm.stopBroadcast();
     }
