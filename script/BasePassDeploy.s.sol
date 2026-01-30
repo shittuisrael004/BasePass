@@ -9,6 +9,7 @@ import {AccessController} from "../src/AccessController.sol";
 import {MetadataRenderer} from "../src/MetadataRenderer.sol";
 import {RewardToken} from "../src/RewardToken.sol";
 import {RewardDistributor} from "../src/RewardDistributor.sol";
+import {TreasuryVault} from "../src/TreasuryVault.sol";
 
 contract BasePassERC721Script is Script {
     BasePassERC721 public basePassERC721;
@@ -109,6 +110,21 @@ contract RewardDistributorScript is Script {
         vm.startBroadcast();
 
         rewardDistributor = new RewardDistributor(0xbE0135454c2fd9377174f2C512edbA4e30b4EDE2);
+
+        vm.stopBroadcast();
+    }
+}
+
+
+contract TreasuryVaultScript is Script {
+    TreasuryVault public treasuryVault;
+
+    function setUp() public {}
+
+    function run() public {
+        vm.startBroadcast();
+
+        treasuryVault = new TreasuryVault();
 
         vm.stopBroadcast();
     }
