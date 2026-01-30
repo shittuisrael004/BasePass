@@ -2,18 +2,18 @@
 pragma solidity ^0.8.13;
 
 import {Script} from "forge-std/Script.sol";
-// import {Counter} from "../src/Counter.sol";
+import {BasePassERC721} from "../src/BasePassERC721.sol";
 
 contract BasePassDeployScript is Script {
-    // Counter public counter;
+    BasePassERC721 public basePassERC721;
 
     function setUp() public {}
 
     function run() public {
-        // vm.startBroadcast();
+        vm.startBroadcast();
 
-        // counter = new Counter();
+        basePassERC721 = new BasePassERC721("BasePass", "BASEPASS", msg.sender);
 
-        // vm.stopBroadcast();
+        vm.stopBroadcast();
     }
 }

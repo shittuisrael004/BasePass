@@ -12,7 +12,7 @@ contract BasePassERC721 is ERC721, Ownable {
         string memory name,
         string memory symbol,
         address creator
-    ) ERC721(name, symbol) Ownable(msg.sender) {
+    ) ERC721(name, symbol) Ownable(creator) {
         transferOwnership(creator);
     }
 
