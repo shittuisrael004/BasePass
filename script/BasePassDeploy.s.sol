@@ -3,6 +3,7 @@ pragma solidity ^0.8.13;
 
 import {Script} from "forge-std/Script.sol";
 import {BasePassERC721} from "../src/BasePassERC721.sol";
+import {BasePassFactory} from "../src/BasePassFactory.sol";
 
 contract BasePassERC721Script is Script {
     BasePassERC721 public basePassERC721;
@@ -17,3 +18,19 @@ contract BasePassERC721Script is Script {
         vm.stopBroadcast();
     }
 }
+
+
+contract BasePassFactoryScript is Script {
+    BasePassFactory public basePassFactory;
+
+    function setUp() public {}
+
+    function run() public {
+        vm.startBroadcast();
+
+        basePassFactory = new BasePassFactory();
+
+        vm.stopBroadcast();
+    }
+}
+
