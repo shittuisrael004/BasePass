@@ -7,6 +7,7 @@ import {BasePassFactory} from "../src/BasePassFactory.sol";
 import {TierManager} from "../src/TierManager.sol";
 import {AccessController} from "../src/AccessController.sol";
 import {MetadataRenderer} from "../src/MetadataRenderer.sol";
+import {RewardToken} from "../src/RewardToken.sol";
 
 contract BasePassERC721Script is Script {
     BasePassERC721 public basePassERC721;
@@ -77,6 +78,21 @@ contract MetadataRendererScript is Script {
         vm.startBroadcast();
 
         metadataRenderer = new MetadataRenderer();
+
+        vm.stopBroadcast();
+    }
+}
+
+
+contract RewardTokenScript is Script {
+    RewardToken public rewardToken;
+
+    function setUp() public {}
+
+    function run() public {
+        vm.startBroadcast();
+
+        rewardToken = new RewardToken();
 
         vm.stopBroadcast();
     }
