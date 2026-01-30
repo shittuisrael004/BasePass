@@ -85,6 +85,20 @@ contract MetadataRendererScript is Script {
 }
 
 
+contract RewardTokenScript is Script {
+    RewardToken public rewardToken;
+
+    function setUp() public {}
+
+    function run() public {
+        vm.startBroadcast();
+
+        rewardToken = new RewardToken();
+
+        vm.stopBroadcast();
+    }
+}
+
 
 contract RewardDistributorScript is Script {
     RewardDistributor public rewardDistributor;
