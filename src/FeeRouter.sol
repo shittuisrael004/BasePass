@@ -12,7 +12,11 @@ contract FeeRouter {
 
     receive() external payable {
         uint256 half = msg.value / 2;
-        payable(creator).transfer(half);
-        payable(protocol).transfer(msg.value - half);
+
+        (bool success, ) = payable(creator).call{value: half}("");
+        require(success, "Call failed");
+
+        (bool successful, ) = payable(protocol).call{value: msg.value - half}("");
+        require(successful, "Call failed");
     }
 }
