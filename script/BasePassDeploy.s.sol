@@ -10,6 +10,7 @@ import {MetadataRenderer} from "../src/MetadataRenderer.sol";
 import {RewardToken} from "../src/RewardToken.sol";
 import {RewardDistributor} from "../src/RewardDistributor.sol";
 import {TreasuryVault} from "../src/TreasuryVault.sol";
+import {FeeRouter} from "../src/FeeRouter.sol";
 
 contract BasePassERC721Script is Script {
     BasePassERC721 public basePassERC721;
@@ -125,6 +126,21 @@ contract TreasuryVaultScript is Script {
         vm.startBroadcast();
 
         treasuryVault = new TreasuryVault();
+
+        vm.stopBroadcast();
+    }
+}
+
+
+contract FeeRouterScript is Script {
+    FeeRouter public feeRouter;
+
+    function setUp() public {}
+
+    function run() public {
+        vm.startBroadcast();
+
+        feeRouter = new FeeRouter(0x937E5651c607dcc9f6a795705Cb352D969090a5d, 0x84397D9B99cA21cE5aa2776Db16cdf13921A85Ce);
 
         vm.stopBroadcast();
     }
