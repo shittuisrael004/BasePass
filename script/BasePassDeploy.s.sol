@@ -162,7 +162,6 @@ contract PaymentSplitterV2Script is Script {
     }
 }
 
-
 contract GovernanceTokenScript is Script {
     GovernanceToken public governanceToken;
 
@@ -176,7 +175,6 @@ contract GovernanceTokenScript is Script {
         vm.stopBroadcast();
     }
 }
-
 
 contract GovernorScript is Script {
     Governor public governor;
