@@ -13,6 +13,7 @@ import {TreasuryVault} from "../src/TreasuryVault.sol";
 import {FeeRouter} from "../src/FeeRouter.sol";
 import {PaymentSplitterV2} from "../src/PaymentSplitterV2.sol";
 import {GovernanceToken} from "../src/GovernanceToken.sol";
+import {Governor} from "../src/Governor.sol";
 
 contract BasePassERC721Script is Script {
     BasePassERC721 public basePassERC721;
@@ -171,6 +172,21 @@ contract GovernanceTokenScript is Script {
         vm.startBroadcast();
 
         governanceToken = new GovernanceToken();
+
+        vm.stopBroadcast();
+    }
+}
+
+
+contract GovernorScript is Script {
+    Governor public governor;
+
+    function setUp() public {}
+
+    function run() public {
+        vm.startBroadcast();
+
+        governor = new Governor();
 
         vm.stopBroadcast();
     }
