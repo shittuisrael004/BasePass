@@ -12,6 +12,7 @@ import {RewardDistributor} from "../src/RewardDistributor.sol";
 import {TreasuryVault} from "../src/TreasuryVault.sol";
 import {FeeRouter} from "../src/FeeRouter.sol";
 import {PaymentSplitterV2} from "../src/PaymentSplitterV2.sol";
+import {GovernanceToken} from "../src/GovernanceToken.sol";
 
 contract BasePassERC721Script is Script {
     BasePassERC721 public basePassERC721;
@@ -155,6 +156,21 @@ contract PaymentSplitterV2Script is Script {
         shares[0] = 1000000000;
 
         paymentSplitterV2 = new PaymentSplitterV2(addresses, shares);
+
+        vm.stopBroadcast();
+    }
+}
+
+
+contract GovernanceTokenScript is Script {
+    GovernanceToken public governanceToken;
+
+    function setUp() public {}
+
+    function run() public {
+        vm.startBroadcast();
+
+        governanceToken = new GovernanceToken();
 
         vm.stopBroadcast();
     }
