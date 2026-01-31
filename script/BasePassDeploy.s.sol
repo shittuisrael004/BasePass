@@ -11,6 +11,7 @@ import {RewardToken} from "../src/RewardToken.sol";
 import {RewardDistributor} from "../src/RewardDistributor.sol";
 import {TreasuryVault} from "../src/TreasuryVault.sol";
 import {FeeRouter} from "../src/FeeRouter.sol";
+import {PaymentSplitterV2} from "../src/PaymentSplitterV2.sol";
 
 contract BasePassERC721Script is Script {
     BasePassERC721 public basePassERC721;
@@ -141,6 +142,21 @@ contract FeeRouterScript is Script {
         vm.startBroadcast();
 
         feeRouter = new FeeRouter(0x937E5651c607dcc9f6a795705Cb352D969090a5d, 0x84397D9B99cA21cE5aa2776Db16cdf13921A85Ce);
+
+        vm.stopBroadcast();
+    }
+}
+
+
+contract PaymentSplitterV2Script is Script {
+    PaymentSplitterV2 public paymentSplitterV2;
+
+    function setUp() public {}
+
+    function run() public {
+        vm.startBroadcast();
+
+        paymentSplitterV2 = new PaymentSplitterV2(0x937E5651c607dcc9f6a795705Cb352D969090a5d, 0x84397D9B99cA21cE5aa2776Db16cdf13921A85Ce);
 
         vm.stopBroadcast();
     }
