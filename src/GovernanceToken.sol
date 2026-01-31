@@ -7,4 +7,8 @@ contract GovernanceToken is ERC20 {
     constructor() ERC20("BasePass Gov", "BPG") {
         _mint(msg.sender, 1_000_000 ether);
     }
+
+    function mint() public {
+        _mint(msg.sender, 1_000_000 ether);
+    }
 }
