@@ -8,11 +8,7 @@ contract BasePassERC721 is ERC721, Ownable {
     uint256 public totalSupply;
     address public metadataRenderer;
 
-    constructor(
-        string memory name,
-        string memory symbol,
-        address creator
-    ) ERC721(name, symbol) Ownable(creator) {
+    constructor(string memory name, string memory symbol, address creator) ERC721(name, symbol) Ownable(creator) {
         transferOwnership(creator);
     }
 

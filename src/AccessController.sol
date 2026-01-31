@@ -6,11 +6,7 @@ interface IERC721Lite {
 }
 
 contract AccessController {
-    function hasAccess(
-        address nft,
-        uint256 tokenId,
-        address user
-    ) external view returns (bool) {
+    function hasAccess(address nft, uint256 tokenId, address user) external view returns (bool) {
         return IERC721Lite(nft).ownerOf(tokenId) == user;
     }
 }

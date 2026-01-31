@@ -27,7 +27,6 @@ contract BasePassERC721Script is Script {
     }
 }
 
-
 contract BasePassFactoryScript is Script {
     BasePassFactory public basePassFactory;
 
@@ -41,7 +40,6 @@ contract BasePassFactoryScript is Script {
         vm.stopBroadcast();
     }
 }
-
 
 contract TierManagerScript is Script {
     TierManager public tierManager;
@@ -57,7 +55,6 @@ contract TierManagerScript is Script {
     }
 }
 
-
 contract AccessControllerScript is Script {
     AccessController public accessController;
 
@@ -71,7 +68,6 @@ contract AccessControllerScript is Script {
         vm.stopBroadcast();
     }
 }
-
 
 contract MetadataRendererScript is Script {
     MetadataRenderer public metadataRenderer;
@@ -87,7 +83,6 @@ contract MetadataRendererScript is Script {
     }
 }
 
-
 contract RewardTokenScript is Script {
     RewardToken public rewardToken;
 
@@ -101,7 +96,6 @@ contract RewardTokenScript is Script {
         vm.stopBroadcast();
     }
 }
-
 
 contract RewardDistributorScript is Script {
     RewardDistributor public rewardDistributor;
@@ -117,7 +111,6 @@ contract RewardDistributorScript is Script {
     }
 }
 
-
 contract TreasuryVaultScript is Script {
     TreasuryVault public treasuryVault;
 
@@ -132,7 +125,6 @@ contract TreasuryVaultScript is Script {
     }
 }
 
-
 contract FeeRouterScript is Script {
     FeeRouter public feeRouter;
 
@@ -141,12 +133,12 @@ contract FeeRouterScript is Script {
     function run() public {
         vm.startBroadcast();
 
-        feeRouter = new FeeRouter(0x937E5651c607dcc9f6a795705Cb352D969090a5d, 0x84397D9B99cA21cE5aa2776Db16cdf13921A85Ce);
+        feeRouter =
+            new FeeRouter(0x937E5651c607dcc9f6a795705Cb352D969090a5d, 0x84397D9B99cA21cE5aa2776Db16cdf13921A85Ce);
 
         vm.stopBroadcast();
     }
 }
-
 
 contract PaymentSplitterV2Script is Script {
     PaymentSplitterV2 public paymentSplitterV2;
@@ -156,7 +148,13 @@ contract PaymentSplitterV2Script is Script {
     function run() public {
         vm.startBroadcast();
 
-        paymentSplitterV2 = new PaymentSplitterV2(0x937E5651c607dcc9f6a795705Cb352D969090a5d, 0x84397D9B99cA21cE5aa2776Db16cdf13921A85Ce);
+        address[] memory addresses = new address[](1);
+        addresses[0] = 0x937E5651c607dcc9f6a795705Cb352D969090a5d;
+
+        uint256[] memory shares = new uint256[](1);
+        shares[0] = 1000000000;
+
+        paymentSplitterV2 = new PaymentSplitterV2(addresses, shares);
 
         vm.stopBroadcast();
     }

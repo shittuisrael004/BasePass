@@ -13,10 +13,7 @@ contract BasePassFactory {
         owner = msg.sender;
     }
 
-    function createClub(
-        string memory name,
-        string memory symbol
-    ) external returns (address) {
+    function createClub(string memory name, string memory symbol) external returns (address) {
         BasePassERC721 club = new BasePassERC721(name, symbol, msg.sender);
         allClubs.push(address(club));
         emit ClubCreated(address(club), msg.sender);
