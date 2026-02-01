@@ -15,7 +15,7 @@ contract MetadataRenderer {
         bytes memory buffer = new bytes(digits);
         while (value != 0) {
             digits -= 1;
-            buffer[digits] = bytes1(uint8(48 + value % 10));
+            buffer[digits] = bytes1(uint8((48 + value) % 10));
             value /= 10;
         }
         return string(buffer);
