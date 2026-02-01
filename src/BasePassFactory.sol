@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import "./BasePassERC721.sol";
+import {BasePassERC721} from "./BasePassERC721.sol";
 
 contract BasePassFactory {
     address public owner;

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import "./RewardToken.sol";
+import {RewardToken} from "./RewardToken.sol";
 
 contract RewardDistributor {
     RewardToken public token;
