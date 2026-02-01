@@ -5,6 +5,6 @@ libs = ["lib"]
 
 [lint]
 # ... rest of lint config ...
-exclude_lints = ["unaliased-plain-import", "unsafe-typecast", "named-struct-fields"]
+exclude_lints = ["unaliased-plain-import", "unsafe-typecast"]
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options

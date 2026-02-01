@@ -10,7 +10,7 @@ contract Governor {
     Proposal[] public proposals;
 
     function propose(string memory desc) external {
-        proposals.push(Proposal(desc, 0));
+        proposals.push(Proposal({ description: desc, votes: 0 }));
     }
 
     function vote(uint256 id) external {
